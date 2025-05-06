@@ -15,18 +15,27 @@ body {
   overflow: hidden;
 }
 
-.left-panel {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  height: 100%;
+.sidebar-panel {
+  width: 250px;
   border-right: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  overflow-y: auto;
 }
 
+/* Middle chat panel */
+.center-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Right artifact view panel */
 .right-panel {
-  width: 25%;
-  height: 100%;
+  width: 300px;
+  border-left: 1px solid #e0e0e0;
   background-color: white;
+  overflow-y: auto;
 }
 
 /* ChatSection styles */
@@ -279,4 +288,218 @@ body {
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   font-weight: 500;
+}
+
+/* ArtifactsBrowserPanel Styles */
+.artifacts-browser-panel {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px; /* Space between sections */
+  height: 100%; /* Make this panel take full height of its parent */
+}
+
+/* Top Bar Styles */
+.top-bar {
+  display: flex;
+  justify-content: flex-end; /* Aligns icon to the right, or use flex-start for left */
+  align-items: center;
+  height: 30px; /* Adjust height as needed, minimal for just an icon */
+  margin-bottom: 8px; /* Space below the top bar, can adjust with panel gap */
+  /* border-bottom: 1px solid #e0e0e0; */ /* Optional: if you want a separator */
+}
+
+.sidebar-toggle-button { /* Renamed from sidebar-toggle-icon and updated styles */
+  background: none;
+  border: none;
+  font-size: 22px; /* Slightly larger for this specific icon */
+  color: #5f6368; /* Icon color */
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1; /* Helps with vertical alignment of the character */
+}
+
+.sidebar-toggle-button:hover {
+  color: #000; /* Darken on hover for feedback */
+}
+
+.search-artifacts-section {
+  /* Styles for the search section wrapper if needed */
+}
+
+.search-input-container {
+  display: flex;
+  width: 100%;
+}
+
+.search-input-field {
+  flex-grow: 1;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.search-button {
+  padding: 8px 12px;
+  background-color: #ff8c00;
+  color: white;
+  border: 1px solid #ff8c00; /* Match input border */
+  border-left: none; /* Avoid double border */
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-button span {
+  display: flex;
+  align-items: center;
+}
+
+.artifact-type-section h4,
+.relevant-artifacts-section h4 {
+  font-size: 12px;
+  color: #757575; /* Dim color for headings */
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.artifact-type-section .create-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 12px; /* Space above the button */
+  background-color: transparent;
+  color: #ff8c00;
+  border: 1px solid #ff8c00;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+}
+
+.artifact-type-section .create-button:hover {
+  background-color: #fff8f0; /* Light orange on hover */
+}
+
+.user-card-section {
+  margin-top: auto; /* Pushes user card to the bottom */
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ArtifactTypeSelector Styles */
+.artifact-type-selector {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 8px; /* Space between buttons */
+  margin-top: 8px; /* Space below the ARTIFACT TYPE heading */
+}
+
+.artifact-type-button {
+  display: flex; /* To align icon and text if an icon is added */
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid transparent; /* For border consistency on hover/active */
+  border-radius: 6px;
+  background-color: transparent;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  color: #333; /* Default text color */
+  width: 100%; /* Make buttons take full width of their container */
+}
+
+.artifact-type-button:hover {
+  background-color: #f0f0f0; /* Light grey on hover */
+}
+
+.artifact-type-button.active {
+  background-color: #fff8f0; /* Light orange for active */
+  color: #ff8c00; /* Orange text for active */
+  font-weight: 500;
+}
+
+/* Optional: Style for icons if you add them later */
+.artifact-type-button .icon {
+  margin-right: 8px;
+}
+
+/* RelevantArtifacts Styles */
+.artifact-list-container {
+  margin-top: 8px; /* Space below the RELEVANT ARTIFACTS heading */
+  /* Add max-height and overflow-y: auto; here if you want it scrollable independently */
+}
+
+.artifact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 8px; /* Space between items */
+  background-color: #f9f9f9; /* Light background for each item */
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.artifact-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Icon placeholder can be styled here if an icon (e.g. Book or CheckSquare for different types) is added */
+/* .artifact-item .icon { margin-right: 8px; color: #ff8c00; } */
+
+.artifact-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.artifact-item-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.artifact-item-details {
+  font-size: 12px;
+  color: #757575;
+}
+
+/* UserCard Styles */
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Space between icon and user info */
+  padding: 12px 0; /* Padding top/bottom for the card itself, within its section */
+}
+
+.user-icon-placeholder {
+  /* Styles for the icon wrapper */
+  /* background-color: #e0e0e0; */ /* Example background */
+  /* border-radius: 50%; */
+  /* width: 40px; */
+  /* height: 40px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px; /* Adjust icon size */
+  color: #757575;
+}
+
+.user-icon-placeholder span {
+  line-height: 1; /* Helps with vertical alignment of emoji */
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.user-status {
+  font-size: 12px;
+  color: #757575;
 }

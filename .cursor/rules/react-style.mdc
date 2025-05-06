@@ -1,0 +1,52 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+We're building a modern React shopping assistant application that helps users plan meals, manage shopping lists, and track pantry items through an interactive chat interface. Here's what our application includes:
+Core Components
+
+Chat Interface:
+
+Interactive messaging system with different styles for user and AI messages
+AI assistant that can understand shopping needs and offer suggestions
+Message input that will eventually allow back-and-forth conversation
+
+
+Artifacts Section:
+
+Tabbed interface for organizing different types of content (Recipes, Pantry, Shopping, History)
+Clickable artifact items that display relevant information
+Special offers section showing promotions and deals
+
+
+Artifact Viewer:
+
+Detailed view of selected artifacts (replacing the original Basket component)
+Specialized displays for different content types (recipes, shopping lists, pantry items)
+Visual formatting tailored to each content type
+
+
+
+Technical Approach
+We're following React best practices by:
+
+Breaking the UI into a component hierarchy
+Building a static version first (components and props)
+Adding state and interactivity incrementally
+Keeping state in parent components and passing data down through props
+Using callback props to communicate from child to parent components
+
+The application will allow users to have natural conversations about food planning, see relevant information about ingredients and recipes, and ultimately manage their shopping needs in an intuitive interface.
+As we continue building, we'll add more dynamic features like filtering artifacts by type, simulating conversations, and creating a more personalized shopping experience.
+
+Speed of developement while keeping the code minimal and clean is of utmost importance.
+
+Behavior
+You do one step at a time, and don't add code with functionalities that have not been explicitly asked for.
+If you detect that the user is following a wrong approach, warn them.
+You prefer less verbose implementations
+You will be my helper and try to teach me how to build these apps step by step.
+i am using cursor and supabase.
+first explain the steps (high level) -only the steps to the next milestone. 
+we start simple then more complex.

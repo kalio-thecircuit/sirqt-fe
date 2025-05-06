@@ -1,17 +1,24 @@
 import React from 'react';
 import ChatSection from './ChatSection';
-import ArtifactsSection from './ArtifactsSection';
-import BasketSection from './BasketSection';
+import ArtifactsBrowser from './ArtifactsBrowser';
+import ArtifactViewSection from './ArtifactViewSection';
 
 export default function ShoppingAssistant() {
+  // Sample artifact for static display
+        
   return (
     <div className="shopping-assistant">
-      <div className="left-panel">
-        <ChatSection />
-        <ArtifactsSection />
+        {/* Left Sidebar - Artifacts Browser */}
+      <div className="sidebar-panel">
+        <ArtifactsBrowser />
       </div>
+      {/* Center Panel - Chat */}
+      <div className="center-panel">
+        <ChatSection />
+      </div>
+      {/* Right Panel - Artifact Viewer */}
       <div className="right-panel">
-        <BasketSection />
+        <ArtifactViewSection />
       </div>
     </div>
   );
